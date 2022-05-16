@@ -23,11 +23,11 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 20) {
             RectangleView(redValue: redSliderValue, greenValue: greenSliderValue, blueValue: blueSliderValue)
-            SliderView(name: "Red", sliderColor: .red, colorValue: $redSliderValue)
+            SliderView(sliderColor: .red, colorValue: $redSliderValue)
                 .focused($focusedField, equals: .red)
-            SliderView(name: "Green", sliderColor: .green, colorValue: $greenSliderValue)
+            SliderView(sliderColor: .green, colorValue: $greenSliderValue)
                 .focused($focusedField, equals: .green)
-            SliderView(name: "Blue", sliderColor: .blue, colorValue: $blueSliderValue)
+            SliderView(sliderColor: .blue, colorValue: $blueSliderValue)
                 .focused($focusedField, equals: .blue)
             Spacer()
         }
@@ -75,7 +75,6 @@ struct RectangleView: View {
 
 
 struct SliderView: View {
-    let name: String
     let sliderColor: Color
     @Binding var colorValue: Double
     
